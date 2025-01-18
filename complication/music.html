@@ -1,0 +1,57 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Music Player</title>  
+    <link rel="stylesheet" href="style.css">  
+    <script src="script.js" defer></script>  
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">  
+</head>  
+<body>  
+
+    <header>  
+        <nav>  
+            <a href="index.html">  
+                <alt="Music Player Logo">  
+            </a>  
+            <div class="nav-links" id="navLinks">  
+                <i class='bx bx-window-close' onclick="hidezMenu()"></i>  
+                <ul>  
+                    <li><a href="index.html">HOME</a></li>  
+                </ul>  
+            </div>  
+            <i class='bx bx-menu' onclick="showMenu()"></i>  
+        </nav>  
+    </header>  
+
+    <main> 
+        <!-- New Audio Player Section -->  
+        <div class="audio-player">  
+            <p>Lady Gaga, Bruno Mars - Die With a Smile</p>  
+            <audio controls autoplay muted loop>  
+                <source src="music/Lady Gaga, Bruno Mars - Die With A Smile.mp3" type="audio/mpeg">  
+                <source src="music/Lady Gaga, Bruno Mars - Die With A Smile.wav" type="audio/wav">  
+            </audio>  
+
+            <p>Bini - Pantropiko</p>  
+            <audio controls>  
+                <source src="music/BINI - Pantropiko.mp3">  
+            </audio>  
+
+            <p>Sabrina Carpenter - Please Please Please</p>  
+            <audio controls>  
+                <source src="music/Sabrina Carpenter - Please Please Please.mp3">  
+            </audio>  
+        </div>  
+        <!-- End of New Audio Player Section -->  
+        
+    </main>  
+
+    <footer>  
+        <!-- Add footer content here if needed -->  
+    </footer>  
+</body>  
+</html>

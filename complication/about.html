@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <section class="sub-header">
+        <nav>
+            <a href="index.html"><img src="media/logo.jpg" alt="Logo"></a>
+            <div class="nav-links" id="navLinks">
+                <i class='bx bx-window-close' onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="article.html">ARTICLE</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                    <li><a href="music.html">MUSIC</a></li>
+                    <li><a href="#" id="toggleForm">LOGIN</a></li>
+                </ul>
+            </div>
+            <i class='bx bx-menu' onclick="showMenu()"></i>
+        </nav>
+
+        <h1>About Us</h1>
+    </section>
+
+<!---- About Us Content ---->
+    <section class="about-us">
+
+        <div class="row">
+             <div class="about-col">
+                <h1>Campus History</h1>
+                <p>Cebu Technological University (CTU) Danao started in June 1949 by virtue of the Danao Municipal Council Resolution naming it “Danao Provincial High School”. 
+                    It was converted into a national vocational secondary school on 
+                    June 22, 1957, pursuant to Republic Act (R.A.) No. 1907. Its name was changed to Danao National Vocational School, 
+                    supervised by then Cebu School of Arts and Trades in Cebu City in 1958. The school secured an eight-hectare site in Brgy. 
+                    Sabang in 1963. In 1964, it acquired two buildings equipped with shop machines donated by the Colombo Aid from the Government of New Zealand. 
+                    In July 1965, the school transferred to its present site in Sabang, Danao City. Ten years later, it was changed to Danao Vocational School which then offered 
+                    the two-year trade technical curriculum. It became an extension campus of the Cebu State College of Science and Technology (CSCST) by virtue of Batas Pambansa 412 in 1983. 
+                    A year after, it started to operate as an independent chartered college with a new name CSCST-College of Industrial Technology. 
+                    The CSCST-CIT was administered by a Vocational School Superintendent, following the construction of the administration building and two-story building in 1988. 
+                    In 1990, the secondary curriculum was phased out to focus on the higher education programs and produced its first baccalaureate degree graduates. 
+                    With the effort of Dr. Bonifacio Villanueva and the support of some legislators, President Arroyo signed the bill converting the Cebu State College of Science and 
+                    Technology System and its external campuses into Cebu Technological University in 2009. Today, CTU Danao is one of the best campuses of the University, offering 19 undergraduate 
+                    and nine (9) graduate programs to over 4,156 students. Most of these programs have received Level II and Level III accreditations from the Accrediting Agency of Chartered Colleges 
+                    and Universities in the Philippines (AACCUP) organization.</p>
+              
+                 <a href="" class="hero-btn red-btn">EXPLORE NOW</a>
+             </div>
+             <div class="about-col">
+                <img src="media/about1.jpg">
+             </div>
+        </div>
+
+    </section>
+    
+  
+   
+  
+ <!---- Footer  ---->
+   <section class="footer">
+       <h4>About US</h4>
+       <p>The Cebu Technological University(CTU) Danao Campus is a satellite campus of 
+        Cebu Technological University. CTU Danao offers undergraduate and graduate programs and 
+        is known as the Center for Internatiolization.</p>
+        <div class="icons">
+            <i class='bx bxl-facebook-circle'></i>
+            <i class='bx bxl-twitter'></i>
+            <i class='bx bxl-instagram-alt' ></i>
+            <i class='bx bxl-linkedin-square' ></i>
+        </div>
+   </section>
+
+
+
+  <script>
+
+       var navLinks = document.getElementById("navLinks");
+
+       function showMenu(){
+           navLinks.style.right = "0";
+       }
+       function hideMenu(){
+           navLinks.style.right = "-200px";
+       }
+    </script>
+
+
+
+
+<!-- Login Form -->
+<div class="form-container" id="formContainer">
+        
+    <button id="closeForm" class="close-btn">&times;</button>
+    
+
+    <div id="loginForm">
+        <h3>Login</h3>
+        <input type="email" id="loginEmail" placeholder="Email" required>
+        <div class="password-container">
+            <input type="password" id="loginPassword" placeholder="Password" required>
+            
+            <span id="togglePassword" class="eye-icon"><i class="bx bxs-show"></i></span>
+        </div>
+        <button id="loginSubmit">Log In</button>
+        <p>Don't have an account? <span id="switchToSignUp">Sign Up</span></p>
+    </div>
+
+    <!-- Sign-Up Form -->
+    <div id="signUpForm" style="display: none;">
+        <h3>Sign Up</h3>
+        <input type="text" id="signUpName" placeholder="Name" required>
+        <input type="email" id="signUpEmail" placeholder="Email" required>
+        <div class="password-container">
+            <input type="password" id="signUpPassword" placeholder="Password" required>
+            
+            <span id="toggleSignUpPassword" class="eye-icon"><i class="bx bxs-show"></i></span>
+        </div>
+        <button id="signUpSubmit">Sign Up</button>
+        <p>Already have an account? <span id="switchToLogin">Log In</span></p>
+    </div>
+</div>
+
+<script>
+    
+    document.getElementById("toggleForm").addEventListener("click", function () {
+        const formContainer = document.getElementById("formContainer");
+        const header = document.querySelector(".sub-header");
+
+        if (formContainer.style.display === "none" || !formContainer.style.display) {
+            formContainer.style.display = "block";
+            header.classList.add("blurred");
+        } else {
+            formContainer.style.display = "none";
+            header.classList.remove("blurred");
+        }
+    });
+
+    
+    document.getElementById("closeForm").addEventListener("click", function () {
+        const formContainer = document.getElementById("formContainer");
+        const header = document.querySelector(".sub-header");
+
+        formContainer.style.display = "none";
+        header.classList.remove("blurred");
+    });
+
+    
+    document.getElementById("switchToSignUp").addEventListener("click", function () {
+        document.getElementById("loginForm").style.display = "none";
+        document.getElementById("signUpForm").style.display = "block";
+    });
+
+    
+    document.getElementById("switchToLogin").addEventListener("click", function () {
+        document.getElementById("signUpForm").style.display = "none";
+        document.getElementById("loginForm").style.display = "block";
+    });
+
+    
+    document.getElementById("togglePassword").addEventListener("click", function () {
+        const passwordField = document.getElementById("loginPassword");
+        const icon = document.getElementById("togglePassword").querySelector("i");
+
+        const type = passwordField.type === "password" ? "text" : "password";
+        passwordField.type = type;
+
+        
+        icon.classList.toggle("bxs-show");
+        icon.classList.toggle("bxs-hide");
+    });
+
+    
+    document.getElementById("toggleSignUpPassword").addEventListener("click", function () {
+        const passwordField = document.getElementById("signUpPassword");
+        const icon = document.getElementById("toggleSignUpPassword").querySelector("i");
+
+        const type = passwordField.type === "password" ? "text" : "password";
+        passwordField.type = type;
+
+        
+        icon.classList.toggle("bxs-show");
+        icon.classList.toggle("bxs-hide");
+    });
+</script>
+
+
+
+</body>
+</html>
